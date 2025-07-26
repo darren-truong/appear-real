@@ -1,3 +1,14 @@
+import ProductList from "@/components/product-list";
+import sampleData from "@/db/sample-data";
+
 export default function HomePage() {
-  return <>AppearReal</>;
+  return (
+    <>
+      <ProductList
+        data={sampleData.products}
+        title="Newest Arrivals"
+        limit={4}
+      />
+    </>
+  );
 }
