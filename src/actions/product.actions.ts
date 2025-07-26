@@ -1,8 +1,9 @@
 "use server";
 
 import { LATEST_PRODUCTS_LIMIT } from "@/lib/constants";
-import prisma from "@/lib/prisma";
+
 import { convertToPlainObject } from "@/lib/utils";
+import { prisma } from "../../db/prisma";
 
 // Get lastest products
 export async function getLatestProducts() {
