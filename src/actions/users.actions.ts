@@ -58,7 +58,7 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
 
     await signIn("credentials", {
       email: user.email,
-      passwordr: plainPassword,
+      password: plainPassword,
     });
 
     return { success: true, message: "User registered successfully" };
