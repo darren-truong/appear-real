@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCartIcon } from "lucide-react";
 import UserButton from "./user-button";
 import { ModeToggle } from "./ui/mode-toggle";
 
@@ -11,7 +11,7 @@ export default function Menu() {
         <ModeToggle />
         <Button asChild variant="ghost">
           <Link href="/cart">
-            <ShoppingCart /> Cart
+            <ShoppingCartIcon /> Cart
           </Link>
         </Button>
         <UserButton />
