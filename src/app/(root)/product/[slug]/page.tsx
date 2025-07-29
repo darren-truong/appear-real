@@ -1,3 +1,4 @@
+import { getMyCart } from "@/actions/cart.actions";
 import { getProductbySlug } from "@/actions/product.actions";
 import AddToCart from "@/components/add-to-cart";
 import ProductImages from "@/components/product-images";
@@ -12,8 +13,9 @@ export default async function ProductDetailsPage(props: {
   const { slug } = await props.params;
 
   const product = await getProductbySlug(slug);
-
   if (!product) notFound();
+
+  const cart = await getMyCart();
 
   return (
     <>
@@ -66,6 +68,7 @@ export default async function ProductDetailsPage(props: {
                 {product.stock > 0 && (
                   <div className="flex-center">
                     <AddToCart
+                      cart={cart}
                       item={{
                         productId: product.id,
                         name: product.name,
