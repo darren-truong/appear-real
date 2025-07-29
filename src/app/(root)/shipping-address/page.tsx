@@ -1,6 +1,7 @@
 import { getMyCart } from "@/actions/cart.actions";
 import { getUserById } from "@/actions/users.actions";
 import { auth } from "@/auth";
+import CheckoutSteps from "@/components/checkout-steps";
 import ShippingAddressForm from "@/components/shipping-address-form";
 import { ShippingAddress } from "@/lib/types";
 import { Metadata } from "next";
@@ -25,6 +26,7 @@ export default async function ShippingAddressPage() {
 
   return (
     <>
+      <CheckoutSteps current={1} />
       <ShippingAddressForm address={user.address as ShippingAddress} />
     </>
   );
