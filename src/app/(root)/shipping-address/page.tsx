@@ -1,6 +1,8 @@
 import { getMyCart } from "@/actions/cart.actions";
 import { getUserById } from "@/actions/users.actions";
 import { auth } from "@/auth";
+import ShippingAddressForm from "@/components/shipping-address-form";
+import { ShippingAddress } from "@/lib/types";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -21,5 +23,9 @@ export default async function ShippingAddressPage() {
 
   const user = await getUserById(userId);
 
-  return <>Address</>;
+  return (
+    <>
+      <ShippingAddressForm address={user.address as ShippingAddress} />
+    </>
+  );
 }
